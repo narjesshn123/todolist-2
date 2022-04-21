@@ -11,6 +11,9 @@ console.log(todoList)
 
 function addTodo(event){
     event.preventDefault();
+    if(todoInput.value === ""){
+        alert("write a task")
+    }else{
 const divTodo = document.createElement("div"); 
 divTodo.classList.add("todo");               
 const liTodo = document.createElement("li"); 
@@ -38,7 +41,7 @@ divTodo.appendChild(trashButton);
 todoList.appendChild(divTodo);          
       
 }
-
+}
 function saveLocalTodo(todo) {
     let todos;
     if (localStorage.getItem("todos") === null) {
@@ -82,8 +85,9 @@ divTodo.appendChild(liTodo);
 const checkButton = document.createElement("button");      
 checkButton.innerHTML = "<i class='fas fa-check'></i>";        
 checkButton.classList.add("complete-btn");
-               
-    checkButton.classList.toggle("completed")
+// const todoss = checkButton.parentElement;                
+// todoss.classList.toggle("completed")        
+    // checkButton.classList.toggle("completed")
 
 const trashButton = document.createElement("button");
 trashButton.innerHTML ="<i class='fas fa-trash'></i>"     
